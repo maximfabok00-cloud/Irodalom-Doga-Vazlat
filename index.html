@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reneszánsz, humanizmus, reformáció – tanulóoldal</title>
+<style>
+:root{color-scheme:light;--ink:#1b2033;--lap:#2a3f8f;--hd:#2a3f8f;--head:#2a3f8f;--gold:#a97c1f;--bg:#f2f3f6;--card:#fff;--soft:#f7f8fb;--line:#cfd4e3;--mut:#555c75;--ok:#1f7a4d;--bad:#b3362f;--okbg:#e0f2e9;--badbg:#f8e0de}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#e6e8f0;--lap:#3a54b5;--hd:#1b2548;--head:#9db0f5;--gold:#d4a73f;--bg:#12151f;--card:#1c2133;--soft:#242a42;--line:#3a4262;--mut:#a3abc6;--ok:#5fd09a;--bad:#f28b84;--okbg:#17382a;--badbg:#472220}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{position:relative;background:var(--hd);color:#fff;padding:56px 20px 26px}
+header h1,header p{max-width:760px;margin-left:auto;margin-right:auto}
+header h1{font:700 clamp(28px,6vw,44px)/1.1 "Iowan Old Style",Palatino,Georgia,serif;margin-top:0;margin-bottom:0}
+header p{margin-top:8px;margin-bottom:0;opacity:.85}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav div{display:flex;max-width:760px;margin:auto;overflow-x:auto}
+nav button{flex:1;background:none;border:0;border-bottom:3px solid transparent;padding:14px 12px;font-weight:600;font-size:16px;font-family:inherit;color:var(--mut);cursor:pointer;white-space:nowrap}
+nav button.on{color:var(--head);border-bottom-color:var(--gold)}
+main{max-width:760px;margin:auto;padding:22px 16px 60px}
+h2{font:700 24px "Iowan Old Style",Palatino,Georgia,serif;color:var(--head);margin:26px 0 6px}
+h2:first-child{margin-top:0}
+ul{margin:6px 0;padding-left:22px}
+.q{background:var(--card);border-left:4px solid var(--lap);padding:14px 16px;margin:14px 0;border-radius:2px 8px 8px 2px}
+.q p{margin:0 0 10px}
+.opt{display:block;width:100%;text-align:left;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:6px 0;font:inherit;color:inherit;cursor:pointer}
+.opt:hover{border-color:var(--lap)}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.fill{width:100%;padding:10px 12px;font:inherit;background:var(--soft);color:inherit;border:1px solid var(--line);border-radius:6px}
+.fb{margin:8px 0 0;font-weight:600}
+.okt{color:var(--ok)}.badt{color:var(--bad)}
+.btn{background:var(--lap);color:#fff;border:0;border-radius:6px;padding:11px 18px;font-weight:600;font-size:16px;font-family:inherit;cursor:pointer;margin:4px 6px 4px 0}
+.btn.alt{background:var(--card);color:var(--head);border:2px solid var(--head)}
+.btn:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.score{font-weight:700;font-size:19px;margin:12px 0}
+.card{display:block;width:100%;height:230px;perspective:900px;padding:0;border:0;background:none;cursor:pointer}
+.in{position:relative;display:block;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.card.f .in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;border-radius:8px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.front{background:var(--card);border:2px solid var(--lap);color:var(--ink);font:700 24px "Iowan Old Style",Palatino,Georgia,serif}
+.back{background:var(--lap);color:#fff;transform:rotateY(180deg);font:18px/1.5 system-ui,sans-serif}
+.cnt{text-align:center;margin:12px 0;color:var(--mut)}
+.tools{text-align:center}
+.tg{position:absolute;top:12px;right:14px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:6px;padding:7px 12px;font-family:inherit;font-size:14px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.in{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>Reneszánsz, humanizmus, reformáció</h1>
+<p>Vázlat, kvíz, tanulókártyák és dolgozat egy helyen</p>
+<button class="tg" id="th" type="button"></button>
+</header>
+<nav><div>
+<button class="on" data-t="v">Vázlat</button><button data-t="k">Kvíz</button><button data-t="c">Kártyák</button><button data-t="d">Dolgozat</button>
+</div></nav>
+<main>
+
+<section id="v">
+<h2>1. Reneszánsz – korszak és korstílus</h2>
+<ul>
+<li>14–16. század; francia <i>renaissance</i> = „újjászületés”</li>
+<li>Észak-Itália városaiból indult, majd elterjedt Európában</li>
+<li>Lényege: az antik görög–római eszmék újjászületése</li>
+<li>Istenközpontúság helyett emberközpontúság; a földi élet és az egyéniség fontos („Minden dolgok mértéke az ember”)</li>
+<li>Ideál: a harmonikus, sokoldalúan művelt személyiség</li>
+</ul>
+<h2>2. Művészet és irodalom</h2>
+<ul>
+<li>Művészet: harmónia, arányosság, szépség (Botticelli: Vénusz születése; Michelangelo: Ádám teremtése)</li>
+<li>Irodalom: emberi érzések és kapcsolatok – szerelem, barátság, természet, a test szépsége</li>
+<li>Új műfajok: egyéni hangú líra, tájköltészet, valóságábrázolás</li>
+</ul>
+<h2>3. Humanizmus</h2>
+<ul>
+<li>Latin <i>humanitas</i> = „emberiesség”; világi gondolkodás, az evilági élet fontossága</li>
+<li>Klasszikus műveltség, ókori szerzők újrafelfedezése</li>
+<li>Polihisztor-eszmény: Leonardo da Vinci (festő, mérnök, feltaláló, zeneszerző, író)</li>
+</ul>
+<h2>4. Reformáció</h2>
+<ul>
+<li>16. század; latin <i>reformatio</i> = „megújítás”; kezdete 1517, Luther Márton fellépése; további fontos alak: Kálvin János</li>
+<li>Kettős jelleg: szellemi irányzat (nemzeti nyelvű irodalom) és vallási mozgalom (a katolikus egyház megújítása)</li>
+<li>Következmények: protestáns felekezetek, anyanyelvű Biblia és istentisztelet, iskolák és nyomdák, kollégiumok (Sárospatak, Debrecen, Pápa)</li>
+<li>Bibliafordítások: Károli Gáspár (Vizsoly, 1590); katolikus: Káldi György (1626)</li>
+</ul>
+<h2>5. Magyar vonatkozások</h2>
+<ul>
+<li>Mátyás király: reneszánsz uralkodó (Corvina-könyvtár, udvari művészet)</li>
+<li>Janus Pannonius: humanista költő; Balassi Bálint: líra, szerelmi és istenes versek</li>
+</ul>
+</section>
+
+<section id="k" hidden>
+<h2>Kvíz</h2>
+<p>Kattints a válaszra – azonnal látod, jó-e.</p>
+<div id="qz"></div>
+<p class="score" id="qs"></p>
+<button class="btn alt" id="qr">Újrakezdés</button>
+</section>
+
+<section id="c" hidden>
+<h2>Tanulókártyák</h2>
+<button class="card" id="cd" aria-label="Kártya megfordítása"><span class="in"><span class="face front" id="cf"></span><span class="face back" id="cb"></span></span></button>
+<p class="cnt" id="cn"></p>
+<div class="tools"><button class="btn alt" id="pv">Előző</button><button class="btn alt" id="nx">Következő</button><button class="btn" id="shf">Keverés</button></div>
+</section>
+
+<section id="d" hidden>
+<h2>Dolgozat</h2>
+<p>10 kérdés (7 teszt + 3 rövid válasz), pontszámmal és jeggyel.</p>
+<button class="btn gb">Új dolgozat generálása</button>
+<div id="dg"></div>
+<button class="btn" id="ev">Kiértékelés</button>
+<button class="btn alt gb">Új dolgozat generálása</button>
+<p class="score" id="dr"></p>
+</section>
+
+</main>
+<script>
+const $=s=>document.querySelector(s),
+sh=a=>[...a].sort(()=>Math.random()-.5),
+nz=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x==b));
+  document.querySelectorAll("section").forEach(s=>s.hidden=s.id!=b.dataset.t);
+});
+
+/* ---------- SÖTÉT MÓD ---------- */
+const rt=document.documentElement;
+function setTh(d){
+  rt.dataset.theme=d?"dark":"light";
+  $("#th").textContent=d?"Világos mód":"Sötét mód";
+  try{localStorage.setItem("th",d?"d":"l")}catch(e){}
+}
+let sv=null;try{sv=localStorage.getItem("th")}catch(e){}
+setTh(sv?sv=="d":matchMedia("(prefers-color-scheme:dark)").matches);
+$("#th").onclick=()=>setTh(rt.dataset.theme!="dark");
+
+/* ---------- KVÍZ ---------- */
+const QZ=[
+["Mit jelent a francia „renaissance” szó?",["Újjászületés","Megújítás","Emberiesség","Harmónia"],0],
+["Hol indult el a reneszánsz?",["Franciaországban","Észak-Itália városaiból","Angliában","Spanyolországban"],1],
+["Mi váltotta fel a középkori istenközpontúságot?",["Természetközpontúság","Királyközpontúság","Emberközpontúság","Egyházközpontúság"],2],
+["Ki festette a Vénusz születése című művet?",["Michelangelo","Leonardo da Vinci","Raffaello","Botticelli"],3],
+["Mit jelent a latin „humanitas”?",["Emberiesség","Megújítás","Tudás","Hit"],0],
+["Melyik alkotó a polihisztor-eszmény példája?",["Luther Márton","Leonardo da Vinci","Kálvin János","Károli Gáspár"],1],
+["Mikor kezdődött a reformáció Luther fellépésével?",["1492","1526","1517","1590"],2],
+["Ki készítette az első teljes magyar Bibliafordítást?",["Káldi György","Balassi Bálint","Janus Pannonius","Károli Gáspár"],3],
+["Melyik híres könyvtár fűződik Mátyás királyhoz?",["Corvina","Vizsolyi","Sárospataki","Pápai"],0],
+["Kinek a költészetében vannak szerelmi és istenes versek?",["Janus Pannonius","Balassi Bálint","Mátyás királyéban","Kálvin Jánoséban"],1]
+];
+let qs=0,qd=0;
+function qinit(){
+  qs=qd=0;$("#qs").textContent="";
+  $("#qz").innerHTML=QZ.map(([q,o],i)=>`<div class="q"><p><b>${i+1}.</b> ${q}</p>${o.map((t,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${t}</button>`).join("")}</div>`).join("");
+}
+$("#qz").onclick=e=>{
+  const b=e.target.closest(".opt");
+  if(!b||b.parentNode.dataset.d)return;
+  const i=+b.dataset.i,j=+b.dataset.j,p=b.parentNode;
+  p.dataset.d=1;
+  p.querySelectorAll(".opt").forEach(x=>{if(+x.dataset.j==QZ[i][2])x.classList.add("ok")});
+  if(j==QZ[i][2])qs++;else b.classList.add("bad");
+  qd++;
+  $("#qs").textContent=`${qs} / ${QZ.length} helyes`+(qd==QZ.length?" – kész!":"");
+};
+$("#qr").onclick=qinit;
+qinit();
+
+/* ---------- KÁRTYÁK ---------- */
+const C=[
+["Reneszánsz jelentése","francia renaissance = „újjászületés”; az antik görög–római eszmék újjászületése"],
+["Reneszánsz időkerete és kiindulása","14–16. század; Észak-Itália városai"],
+["Reneszánsz világszemlélete","Emberközpontúság, földi élet és egyéniség; „Minden dolgok mértéke az ember”"],
+["Reneszánsz művészet","Harmónia, arányosság, szépség – Botticelli: Vénusz születése, Michelangelo: Ádám teremtése"],
+["Reneszánsz irodalom","Szerelem, barátság, természet, emberi test szépsége; egyéni hangú líra, tájköltészet, valóságábrázolás"],
+["Humanizmus","Latin humanitas = emberiesség; világi gondolkodás, klasszikus műveltség, ókori szerzők újrafelfedezése"],
+["Polihisztor","Sokoldalúan művelt, több tudományban és művészetben jártas ember – pl. Leonardo da Vinci"],
+["Reformáció","Latin reformatio = megújítás; 16. századi hitújító mozgalom"],
+["A reformáció kettős jellege","Szellemi irányzat (nemzeti nyelvű irodalom) és vallási mozgalom (katolikus egyház megújítása)"],
+["1517","Luther Márton fellépése – a reformáció kezdete; másik fontos alak: Kálvin János"],
+["Bibliafordítások","Károli Gáspár (Vizsoly, 1590) – első teljes magyar; Káldi György (1626) – katolikus"],
+["Jelentős kollégiumok","Sárospatak, Debrecen, Pápa"],
+["Mátyás király","Reneszánsz uralkodó; Corvina-könyvtár, udvari művészet támogatása"],
+["Magyar reneszánsz költők","Janus Pannonius (humanista költő); Balassi Bálint (szerelmi és istenes versek)"]
+];
+let cd=C,ci=0;
+function rc(){
+  $("#cd").classList.remove("f");
+  $("#cf").textContent=cd[ci][0];$("#cb").textContent=cd[ci][1];
+  $("#cn").textContent=`${ci+1} / ${cd.length}`;
+}
+$("#cd").onclick=()=>$("#cd").classList.toggle("f");
+$("#pv").onclick=()=>{ci=(ci+cd.length-1)%cd.length;rc()};
+$("#nx").onclick=()=>{ci=(ci+1)%cd.length;rc()};
+$("#shf").onclick=()=>{cd=sh(C);ci=0;rc()};
+rc();
+
+/* ---------- DOLGOZAT ---------- */
+/* tesztkérdések: [kérdés, [válaszok], helyes index] */
+const B=[
+["Melyik évszázadokra tehető a reneszánsz?",["12–14. század","14–16. század","17–18. század","10–12. század"],1],
+["Melyik Michelangelo műve?",["Vénusz születése","Ádám teremtése","Corvina","Vizsolyi Biblia"],1],
+["Mi a reneszánsz lényege?",["A középkori hit megerősítése","A természettudományok tilalma","Az antik görög–római eszmék újjászületése","A nemzeti nyelvű Biblia"],2],
+["Melyik mondat fejezi ki a reneszánsz szemléletet?",["„Minden dolgok mértéke az ember”","„Minden Isten dicsőségére”","„A hit mindenek felett”","„A király az állam”"],0],
+["Melyik latin szóból ered a humanizmus elnevezés?",["reformatio","renaissance","humanitas","corvina"],2],
+["Mit jelent a latin „reformatio”?",["Újjászületés","Megújítás, újjászervezés","Emberiesség","Harmónia"],1],
+["Ki a reformáció másik kiemelkedő alakja Luther Márton mellett?",["Kálvin János","Janus Pannonius","Káldi György","Balassi Bálint"],0],
+["Hol jelent meg az első teljes magyar Biblia?",["Debrecen","Pápa","Vizsoly","Sárospatak"],2],
+["Ki fordította le a Bibliát katolikus szempontból 1626-ban?",["Károli Gáspár","Káldi György","Luther Márton","Kálvin János"],1],
+["Melyik NEM tartozik a jelentős kollégiumok közé?",["Sárospatak","Debrecen","Pápa","Esztergom"],3],
+["Mi volt a reformáció szellemi jellege?",["Latin nyelvű irodalom","Nemzeti nyelvű irodalom kibontakozása","Az antik szerzők tilalma","A nyomdák betiltása"],1],
+["Mi segítette a tanok gyors elterjedését?",["Iskolák és nyomdák alapítása","A kolostorok bezárása","A latin nyelv kizárólagos használata","A vásárok tilalma"],0],
+["Ki volt a magyar humanista költő?",["Balassi Bálint","Janus Pannonius","Károli Gáspár","Káldi György"],1],
+["Melyik jellemző a reneszánsz irodalomra?",["Csak vallási témák","Emberi érzések és kapcsolatok ábrázolása","Az érzelmek elutasítása","Kizárólag latin nyelv"],1],
+["Mit jelent a polihisztor?",["Egyházi vezető","Sokoldalúan művelt ember","Híres festő","Nyomdász"],1],
+["Milyen uralkodó volt Mátyás király?",["Reformáció-pártoló","Reneszánsz uralkodó","Középkori lovagkirály","Protestáns fejedelem"],1]
+];
+/* rövid válaszos kérdések: [kérdés, elfogadott kulcsszavak, helyes válasz] */
+const F=[
+["Ki lépett fel 1517-ben, ezzel elindítva a reformációt?",["luther"],"Luther Márton"],
+["Mi a francia „renaissance” szó magyar jelentése?",["ujjaszulet"],"újjászületés"],
+["Melyik évben jelent meg a Károli-féle Biblia Vizsolyban?",["1590"],"1590"],
+["Mi a neve Mátyás király híres könyvtárának?",["corvina"],"Corvina"],
+["Ki festette a Vénusz születése című képet?",["botticelli"],"Botticelli"],
+["Melyik latin szóból ered a humanizmus?",["humanitas"],"humanitas"],
+["Melyik évben jelent meg Káldi György katolikus Bibliafordítása?",["1626"],"1626"],
+["Ki írt szerelmi és istenes verseket a magyar reneszánsz irodalomban?",["balassi"],"Balassi Bálint"]
+];
+let T=[];
+function gen(){
+  T=[...sh(B).slice(0,7).map(([q,o,a])=>({q,o:sh(o.map((t,i)=>[t,i==a]))})),
+     ...sh(F).slice(0,3).map(([q,k,d])=>({q,k,d}))];
+  $("#dg").innerHTML=T.map((t,i)=>`<div class="q" id="t${i}"><p><b>${i+1}.</b> ${t.q}</p>`+
+    (t.o?t.o.map(([x],j)=>`<label class="opt"><input type="radio" name="r${i}" value="${j}"> ${x}</label>`).join("")
+        :`<input class="fill" type="text" autocomplete="off" placeholder="Írd ide a választ">`)+`</div>`).join("");
+  $("#dr").textContent="";$("#ev").disabled=false;
+}
+document.querySelectorAll(".gb").forEach(b=>b.onclick=()=>{gen();$("#d").scrollIntoView({behavior:"smooth"})});
+$("#ev").onclick=()=>{
+  let s=0;
+  T.forEach((t,i)=>{
+    const d=$("#t"+i);let ok=false;
+    if(t.o){
+      const r=d.querySelector("input:checked");
+      ok=!!r&&t.o[+r.value][1];
+      d.querySelectorAll("label").forEach((l,j)=>{
+        if(t.o[j][1])l.classList.add("ok");
+        else if(l.firstElementChild.checked)l.classList.add("bad");
+      });
+    }else{
+      const v=nz(d.querySelector("input").value);
+      ok=!!v&&t.k.some(k=>v.includes(k));
+      d.insertAdjacentHTML("beforeend",`<p class="fb ${ok?"okt":"badt"}">${ok?"Helyes!":"Helyes válasz: "+t.d}</p>`);
+    }
+    d.querySelectorAll("input").forEach(x=>x.disabled=true);
+    if(ok)s++;
+  });
+  const p=s/T.length,g=p>=.9?5:p>=.75?4:p>=.6?3:p>=.4?2:1;
+  $("#dr").textContent=`Eredmény: ${s} / ${T.length} pont – jegy: ${g}`;
+  $("#ev").disabled=true;
+  $("#dr").scrollIntoView({behavior:"smooth",block:"center"});
+};
+gen();
+</script>
+</body>
+</html>
